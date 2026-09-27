@@ -18,7 +18,7 @@ public class Main {
         matrixValues(scanner, matrix, rows, columns); // Populates the matrix with user inputs
 
 
-        System.out.println((printPeakColumns(matrix) == null) ? "There are no peak columns in the matrix given" : printPeakColumns(matrix));
+        printPeakColumns(matrix);
 
 
     }
@@ -69,15 +69,14 @@ public class Main {
     }
 
     // Function to check and print the peak columns (values)
-    private static String printPeakColumns(int[][] matrix) {
+    private static void printPeakColumns(int[][] matrix) {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
                 if (isPeakColumn(matrix, i, j))
-                    return "(" + (i + 1) + "," + (j + 1) + ") = " + getValue(matrix, i, j);
+                    System.out.println("(" + (i + 1) + "," + (j + 1) + ") = " + getValue(matrix, i, j));
 
             }
         }
-        return null;
     }
 
     // helper function to find maximum value in an array
